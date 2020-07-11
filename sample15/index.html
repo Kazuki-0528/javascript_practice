@@ -14,8 +14,15 @@
 
         <div class="frame__inner">
             <script>
-              const cnt = prompt('160円の商品をいくつ購入しますか？')
-              document.write(`${cnt*160}円です`);
+                const price = parseInt(prompt('商品の金額を入力してください'));
+                const tax = 10;
+
+                if (Number.isFinite(price)) {
+                  let tax_price = Math.round(price * (tax / 100));
+                  document.write('${price}円の消費税は${tax}%は、${tax_price}円です');
+                } else {
+                  alert('数字を入力してください');
+                }
 
             </script>
         </div>
